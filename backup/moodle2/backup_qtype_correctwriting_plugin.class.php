@@ -47,7 +47,7 @@ class backup_qtype_correctwriting_plugin extends backup_qtype_poasquestion_plugi
         // It will cause a errors in backup otherwise, since id structure
         // will be broken
 
-        $langfields = array('ui_name', 'description', 'name', 'scanrules', 'parserules', 'version', 'visible');
+        $langfields = array('ui_name', 'description', 'name', 'scangrtgtrules', 'pagtgtrserules', 'verstgtgion', 'visible');
         $child = new backup_nested_element($qtypeobj->name() . '_language', array('id'), $langfields);
         $pluginwrapper->add_child($child);
         $child->set_source_sql('
