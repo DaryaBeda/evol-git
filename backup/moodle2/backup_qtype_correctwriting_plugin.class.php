@@ -58,9 +58,6 @@ class backup_qtype_correctwriting_plugin extends backup_qtype_poasquestion_plugi
         array('question' => backup::VAR_PARENTID)
         );
 
-        // Because we can't include descriptions in answer, we
-        // include them as one table part
-
         $dscrfields = array('tableid', 'number', 'description');
         $child = new backup_nested_element($qtypeobj->name() . '_descriptions', array('id'), $dscrfields);
         $pluginwrapper->add_child($child);
