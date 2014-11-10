@@ -106,22 +106,6 @@ class restore_qtype_correctwriting_plugin extends restore_qtype_poasquestion_plu
         $this->tokencountmapping = null;
         $this->tokendescriptionmapping = null;
      }
-    /**
-     * Saves old answer ids, because we can't found those otherwise
-     */
-    public function process_question_answer($data) {
-        // If started new question - invalidate values
-        $oldparentid = $this->get_old_parentid('question');
-        if ($oldparentid != $this->oldquestion) {
-            $this->refill_class_fields();
-        }
-        if (is_array($this->answermapping) == false) {
-            $this->answermapping = array();
-        }
-        // Populate mapping with old ids
-        $this->answermapping[] = $data['id'];
-        parent::process_question_answer($data);
-    }
 
      /**
       * Processes question descriptions
